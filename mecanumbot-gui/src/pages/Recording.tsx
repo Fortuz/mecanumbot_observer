@@ -36,7 +36,7 @@ export default function Recording() {
   }
 
   return (
-    <div style={{ display: "grid", gap: 16 }}>
+    <div style={{ display: "grid", gap: 16, backdropFilter: "blur(20px)" }}>
       <h1 style={{ margin: 0 }}>Recording</h1>
 
       <RecordControls isRecording={isRecording} onStart={start} onStop={stop} />

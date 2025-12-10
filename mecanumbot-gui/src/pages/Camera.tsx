@@ -20,23 +20,34 @@ export default function Camera() {
   }, [safeUrl])
 
   return (
-    <div style={{ display: "grid", gap: 16 }}>
-      <h1 style={{ margin: 0 }}>Camera</h1>
+    <div
+      style={{
+        display: "grid",
+        gap: 16,
+        width: "100%",
+        justifyItems: "center",
+      }}
+    >
+      <h1 style={{ margin: 0, textAlign: "center", width: "100%" }}>Camera</h1>
 
       <div
         style={{
+          width: "100%",
+          maxWidth: 720,
           background: "rgba(255,255,255,0.03)",
           border: "1px solid rgba(255,255,255,0.06)",
           borderRadius: 14,
-          padding: 16,
+          padding: 20,
           display: "grid",
-          gap: 10,
-          maxWidth: 720,
+          gap: 12,
+          justifyItems: "center",
+          backdropFilter: "blur(20px)",
         }}
       >
-        <label style={{ fontSize: 12, opacity: 0.8 }}>
+        <label style={{ fontSize: 12, opacity: 0.8, textAlign: "center" }}>
           External camera stream URL
         </label>
+
 
         <input
           value={url}
@@ -46,6 +57,7 @@ export default function Camera() {
           }}
           placeholder={DEFAULT_URL}
           style={{
+            width: "100%",
             padding: "10px 12px",
             borderRadius: 10,
             fontSize: 12,
@@ -60,6 +72,7 @@ export default function Camera() {
         {safeUrl ? (
           <div
             style={{
+              width: "100%",
               borderRadius: 10,
               overflow: "hidden",
               border: "1px solid rgba(255,255,255,0.06)",
@@ -86,16 +99,16 @@ export default function Camera() {
             />
           </div>
         ) : (
-          <div style={{ fontSize: 11, opacity: 0.6 }}>
+          <div style={{ fontSize: 11, opacity: 0.6, textAlign: "center" }}>
             Enter the MJPEG stream URL.
           </div>
         )}
 
         {error && (
-          <div style={{ fontSize: 11, color: "#ff8080" }}>{error}</div>
+          <div style={{ fontSize: 11, color: "#ff8080", textAlign: "center" }}>{error}</div>
         )}
 
-        <div style={{ fontSize: 10, opacity: 0.5 }}>
+        <div style={{ fontSize: 10, opacity: 0.5, textAlign: "center" }}>
           Run <code>web_video_server</code> on the host machine and use the
           stream URL.
         </div>

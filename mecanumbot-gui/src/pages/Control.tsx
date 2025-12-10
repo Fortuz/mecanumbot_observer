@@ -78,7 +78,7 @@ export default function Control() {
           mode="x"
           showYaw={false}
           title="Left Stick (Forward / Back)"
-          description="Mimics Xbox left stick vertical axis."
+          description="Mimics left stick vertical axis."
           onChange={(v) => handleFbChange({ linearX: v.linearX })}
           onEnd={handleFbEnd}
           size={200}
@@ -90,7 +90,7 @@ export default function Control() {
           mode="y"
           showYaw={false}
           title="Right Stick (Left / Right)"
-          description="Mimics Xbox right stick horizontal strafe."
+          description="Mimics right stick horizontal strafe."
           onChange={(v) => handleLrChange({ linearY: v.linearY })}
           onEnd={handleLrEnd}
           size={200}
@@ -118,13 +118,6 @@ export default function Control() {
       >
         STOP
       </button>
-
-      <div style={{ fontSize: 12, opacity: 0.75 }}>
-        Last command:{" "}
-        {`x=${last.linearX.toFixed(2)}, y=${last.linearY.toFixed(
-          2
-        )}, yaw=${last.angularZ.toFixed(2)}`}
-      </div>
     </div>
   )
 }
