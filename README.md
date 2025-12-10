@@ -1,10 +1,7 @@
 # Mecanumbot Observer
-
-Embodied Intelligence course project to build a **web-based GUI** for controlling and observing the Mecanumbot, with support for **recording measurements**, **battery monitoring**, **external camera integration**, and **Dockerized ROS2** components.
-
 ---
 
-## Requirements - Current Status
+## Requirements
 
 - Build an easy to use GUI to control and observe the Mecanumbot and record measurement   
 - Easy reconfiguration possibility for the controller  
@@ -135,47 +132,8 @@ location.reload()
 localStorage.setItem("mb_mode", "mock")
 location.reload()
 ```
-
-## TODOs (Next Steps)
-
-### High Priority
-- [ ] Validate topics in lab
-- [ ] Confirm odom content and axis direction
-
-### Controller`
-- [ ] Implement deadzone + scaling
-- [ ] Document mapping clearly
-
-### Controller Reconfiguration
-- [ ] Extend localStorage config:
-  - maxLinear
-  - maxStrafe
-  - deadzone
-  - send rate
-  - allow namespace change
-
-### Recording + Save
-- [ ] Implement ROS2 Python gateway
-- [ ] Start/stop `ros2 bag record` for selected topics
-- [ ] Store session outputs in a mounted directory/volume
-- [ ] Wire Recording UI to gateway API
-
-### External Camera
-- [ ] Confirm supported stream formats in lab
-- [ ] Add simple connection status display
-- [ ] Consider backend proxy if RTSP is required
-
-### Docker
-- [ ] Create Dockerfiles:
-  - ROS2 service (Humble + observer/gateway + rosbridge)
-  - GUI service (build + nginx)
-- [ ] Add `docker-compose.yml`
-- [ ] Verify Windows/Linux run steps
-
 ---
-
 ## Notes
 
 - The GUI is **mock-first** for testing and UI design purposes.
 - Real-data mode is enabled via `localStorage` to keep the interface minimal.
-- Battery monitoring is set up.
