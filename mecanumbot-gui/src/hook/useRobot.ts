@@ -30,11 +30,6 @@ export function useRobot() {
         window.clearInterval(statusTimer.current)
         statusTimer.current = null
       }
-
-      // ✅ IMPORTANT:
-      // Do NOT disconnect here.
-      // Tab switching should not tear down the shared WS connection.
-      // The app-level unmount is where you'd close it if needed.
     }
   }, [client])
 

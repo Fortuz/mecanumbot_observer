@@ -17,7 +17,7 @@ function createNewClient(): RobotClient {
   return createMockClient()
 }
 
-// ✅ Singleton instance shared across the app
+// Singleton instance shared across the app
 let singleton: RobotClient | null = null
 
 export function getClient(): RobotClient {
@@ -25,7 +25,6 @@ export function getClient(): RobotClient {
   return singleton
 }
 
-// ✅ Keep old API working
 export function createClient(): RobotClient {
   return getClient()
 }

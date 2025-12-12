@@ -1,8 +1,8 @@
 type Session = {
   id: string
   name: string
-  startedAt: string // ISO
-  endedAt?: string // ISO
+  startedAt: string
+  endedAt?: string
   sizeBytes?: number
   downloadUrl?: string
 }

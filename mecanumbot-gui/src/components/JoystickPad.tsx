@@ -38,7 +38,7 @@ export default function JoystickPad({
 }: Props) {
   const areaRef = useRef<HTMLDivElement | null>(null)
 
-  // ✅ IMPORTANT: store callbacks in refs to avoid re-render loops
+  // Store callbacks in refs to avoid re-render loops
   const onChangeRef = useRef<Props["onChange"]>(onChange)
   const onEndRef = useRef<Props["onEnd"]>(onEnd)
 
@@ -51,7 +51,7 @@ export default function JoystickPad({
   }, [onEnd])
 
   const [dragging, setDragging] = useState(false)
-  const [knob, setKnob] = useState({ x: 0, y: 0 }) // normalized -1..1
+  const [knob, setKnob] = useState({ x: 0, y: 0 })
   const [yawNorm, setYawNorm] = useState(0)
 
   const value = useMemo<JoystickValue>(() => {
@@ -61,7 +61,6 @@ export default function JoystickPad({
     return { linearX, linearY, angularZ }
   }, [knob.x, knob.y, yawNorm, maxLinear, maxAngular, mode, showYaw])
 
-  // ✅ CRITICAL: depend only on value
   useEffect(() => {
     onChangeRef.current?.(value)
   }, [value])
